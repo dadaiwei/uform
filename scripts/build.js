@@ -1,5 +1,4 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const WebpackBundleAnylyzer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const pathEnv = require("./pathEnv");
@@ -26,7 +25,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new WebpackBundleAnylyzer(),
     new MiniCssExtractPlugin({
       filename: "uform.css",
       chunkFilename: "[id].css"
