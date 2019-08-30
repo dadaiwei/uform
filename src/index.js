@@ -1,7 +1,6 @@
-import Field from "./Field";
-import UForm from "./UForm";
-import ModalForm from "./ModalForm";
+import Field from "./components/Field";
+import UForm from "./components/UForm";
 
-export { Field, UForm, ModalForm };
+export { Field, UForm };
 
 export default UForm;

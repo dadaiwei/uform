@@ -1,0 +1,10 @@
+/* form按钮 */
+.normal-form-button {
+  margin-left: 20px;
+}
+
+/* form弹窗 */
+.form-modal .ant-modal-body {
+  max-height: 70vh;
+  overflow: auto;
+}
