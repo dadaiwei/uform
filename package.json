@@ -1,6 +1,6 @@
 {
   "name": "uform",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A form component for antd",
   "main": "./dist/index.js",
   "scripts": {
