@@ -1,7 +1,7 @@
 const path = require("path");
 
 const pathEnv = {
-  entry: "./src/index",
+  entry: "./lib/index",
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "../dist"),
