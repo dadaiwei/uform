@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import UForm from "../../../dist/index";
-import "../../../dist/uform.css";
+import UForm from "uform";
+import "uform/dist/uform.css";
 
 function NormalForm() {
   const [data, setData] = useState({

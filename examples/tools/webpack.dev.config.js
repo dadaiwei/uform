@@ -4,7 +4,6 @@ const baseConfig = require("./webpack.com.config");
 
 module.exports = merge(baseConfig, {
   mode: "development",
-  devtool: "cheap-module-eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, "../dist"),
     host: "localhost",

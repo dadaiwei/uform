@@ -62,19 +62,23 @@ module.exports = {
       minSize: 3000, // 抽取出来的文件压缩前最小大小
       maxSize: 0, // 抽取出来的文件压缩前的最大大小
       minChunks: 1, // 被引用次数,默认为1
-      maxAsyncRequests: 5, // 最大的按需(异步)加载次数，默认为 5；
-      maxInitialRequests: 3, // 最大的初始化加载次数，默认为 3；
-      automaticNameDelimiter: "~", // 抽取出来的文件的自动生成名字的分割符，默认为 ~；
-      name: "vendor/vendor", // 抽取出的文件名，默认为true，表示自动生成文件名
       cacheGroups: {
         // 缓存组
-        common: {
+        antd: {
           // 将node_modules模块被不同的chunk引入超过1次的抽取为common
-          test: /[\\/]node_modules[\\/]/,
-          name: "common",
-          chunks: "initial",
-          priority: 2,
-          minChunks: 2
+          test: /[\\/]node_modules[\\/]((antd).*)[\\/]/,
+          name: "antd",
+          chunks: "all"
+        },
+        highlight: {
+          test: /[\\/]node_modules[\\/]((highlight).*)[\\/]/,
+          name: "highlight",
+          chunks: "all"
+        },
+        vendor: {
+          test: /[\\/]node_modules[\\/](?!(antd|hightlight).*)[\\/]/,
+          name: "vendor",
+          chunks: "all"
         },
         default: {
           reuseExistingChunk: true, // 避免被重复打包分割

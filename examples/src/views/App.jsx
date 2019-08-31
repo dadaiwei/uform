@@ -175,8 +175,8 @@ class App extends Component {
       {
         key: "1",
         attribute: "visible",
-        required: "true",
         explain: "弹框是否可见",
+        required: "true",
         type: "boolean",
         values: "true | false",
         defaultValue: "true"
@@ -184,11 +184,20 @@ class App extends Component {
       {
         key: "2",
         attribute: "title",
-        required: "true",
         explain: "弹框标题",
+        required: "true",
         type: "string | ReactNode",
         values: "-",
         defaultValue: "无"
+      },
+      {
+        key: "3",
+        attribute: "width",
+        required: "false",
+        explain: "弹框宽度",
+        type: "number",
+        values: "-",
+        defaultValue: "600"
       }
     ];
     this.links = [
