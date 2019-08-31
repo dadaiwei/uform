@@ -13,14 +13,12 @@ class NormalForm extends Component {
     layout: PropTypes.string,
     formItemLayout: PropTypes.object,
     tailFormItemLayout: PropTypes.object,
+    showCancelButton: PropTypes.bool,
+    loading: PropTypes.bool,
     data: PropTypes.object.isRequired,
     fields: PropTypes.array.isRequired,
-    showConfirmButton: PropTypes.bool,
-    showCancelButton: PropTypes.bool,
-    showResetButton: PropTypes.bool,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func.isRequired,
-    onReset: PropTypes.func,
     onCancel: PropTypes.func
   };
 
@@ -41,30 +39,19 @@ class NormalForm extends Component {
   };
 
   render() {
-    const {
-      tailFormItemLayout,
-      showConfirmButton,
-      showCancelButton,
-      showResetButton,
-      ...restProps
-    } = this.props;
-    const hasTailFormItem = showConfirmButton || showCancelButton || showResetButton;
+    const { tailFormItemLayout, showCancelButton, loading, ...restProps } = this.props;
     return (
       <FormComponent ref={this.formRef} {...restProps}>
-        {hasTailFormItem && (
-          <Form.Item {...tailFormItemLayout}>
-            {showConfirmButton && (
-              <Button type='primary' htmlType='submit' onClick={this.handleSubmit}>
-                确定
-              </Button>
-            )}
-            {showCancelButton && (
-              <Button className='normal-form-button' onClick={this.cancelSubmit}>
-                取消
-              </Button>
-            )}
-          </Form.Item>
-        )}
+        <Form.Item {...tailFormItemLayout}>
+          <Button loading={loading} type='primary' htmlType='submit' onClick={this.handleSubmit}>
+            确定
+          </Button>
+          {showCancelButton && (
+            <Button className='normal-form-button' onClick={this.cancelSubmit}>
+              取消
+            </Button>
+          )}
+        </Form.Item>
       </FormComponent>
     );
   }

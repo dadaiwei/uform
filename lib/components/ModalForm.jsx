@@ -15,11 +15,11 @@ class ModalForm extends Component {
     visible: PropTypes.bool.isRequired,
     loading: PropTypes.bool,
     width: PropTypes.number,
-    onChange: PropTypes.func,
-    onClose: PropTypes.func.isRequired,
-    onSubmit: PropTypes.func.isRequired,
     data: PropTypes.object.isRequired,
-    fields: PropTypes.array.isRequired
+    fields: PropTypes.array.isRequired,
+    onChange: PropTypes.func,
+    onCancel: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -30,8 +30,8 @@ class ModalForm extends Component {
 
   // 关闭弹窗
   leaveModal = () => {
-    const { onClose } = this.props;
-    onClose && onClose();
+    const { onCancel } = this.props;
+    onCancel && onCancel();
   };
 
   // 确认操作
@@ -53,11 +53,11 @@ class ModalForm extends Component {
         width={width}
         visible={visible}
         closable
-        onCancel={this.leaveModal}
-        onOk={this.confirmAction}
-        confirmLoading={loading}
         okText='确认'
-        cancelText='取消'>
+        cancelText='取消'
+        confirmLoading={loading}
+        onCancel={this.leaveModal}
+        onOk={this.confirmAction}>
         <FormComponent ref={this.formRef} {...restProps} />
       </Modal>
     );

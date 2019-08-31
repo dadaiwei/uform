@@ -41,7 +41,6 @@ class FormComponent extends Component {
         {fields.map((item, index) => {
           return (
             <Field
-              form={form}
               data={data}
               fieldProps={item}
               key={index}

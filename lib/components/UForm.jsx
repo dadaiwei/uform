@@ -8,13 +8,13 @@ class UForm extends React.Component {
   static propTypes = {
     type: PropTypes.string, // 表单类型，type-normal/modal
     layout: PropTypes.string, // 表单布局，horizontal/vertical/inline
-    visible: PropTypes.bool, // modal form是否课件
+    visible: PropTypes.bool, // modal form是否可见
+    title: PropTypes.string, // modal标题
+    loading: PropTypes.bool, // 确定按钮loading
     labelCol: PropTypes.number, // formItem label部分占宽
     wrapperCol: PropTypes.number, // formItem内容部分占宽
     data: PropTypes.object.isRequired, // data
     fields: PropTypes.array.isRequired, // fields
-    showConfirmButton: PropTypes.bool, // 展示确认按钮
-    showResetButton: PropTypes.bool, // 展示重置按钮
     showCancelButton: PropTypes.bool, // 展示取消按钮
     onChange: PropTypes.func, // 修改表单回调
     onSubmit: PropTypes.func.isRequired, // 提交回调
@@ -29,7 +29,6 @@ class UForm extends React.Component {
     wrapperCol: 16,
     data: {},
     fields: [],
-    showConfirmButton: true,
     showCancelButton: true
   };
 

@@ -1,0 +1,175 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+}
+
+h2 {
+  margin: 30px 0 10px;
+}
+
+#root {
+  width: 70%;
+  padding: 0 15px 20px 0;
+  margin: 0 0 40px 140px;
+
+  .page-anchor {
+    position: fixed;
+    right: 100px;
+    top: 100px;
+  }
+
+  .demo-container {
+    .page-header {
+      padding-bottom: 9px;
+      margin: 40px 0 20px;
+      border-bottom: 1px solid #eee;
+
+      a {
+        cursor: pointer;
+        font-size: 20px;
+        color: #337ab7;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .description {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.8;
+  }
+
+  .use-block {
+    .step {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .step-code {
+      .javascript {
+        padding-left: 20px;
+      }
+    }
+  }
+
+
+  .demo-box-container {
+    width: 100%;
+    margin: 20px 0 20px;
+
+    .demo-box {
+      width: 100%;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+    }
+
+    .modal-form-demo-box {
+      .code-box {
+        padding-top: 20px;
+      }
+
+      .code-html {
+        padding: 0;
+        height: 80px;
+      }
+    }
+
+    .code-html {
+      padding: 40px 0 10px;
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 100px 0;
+      }
+    }
+
+    .code-box {
+      width: 100%;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+
+      .code-collapse-box {
+        margin-top: 5px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-top: 1px solid #dddddd;
+
+        .code-collapse {
+          cursor: pointer;
+
+          &:hover {
+            color: #1890ff;
+          }
+        }
+      }
+
+      .code-block {
+        overflow: auto;
+        transition: height 0.2s;
+
+        .code {
+          .javascript {
+            padding: 20px 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .api-container {
+    h3:nth-child(n+2) {
+      margin: 15px 0 10px;
+    }
+
+    .api-block {
+      .ant-table {
+        font-size: 16px;
+
+        .api-table-attribute {
+          font-weight: bold;
+        }
+
+        .api-table-type {
+          color: #c41d7f;
+        }
+
+        .api-table-required {
+          color: #0aa679;
+        }
+
+        .api-table-values {
+          color: #1890ff;
+        }
+      }
+    }
+  }
+
+}
