@@ -395,6 +395,20 @@ function ModalForm() {
 | onChange   | 表单每一项修改回调       | false    | Function(value)  | -                                 | 无         |
 | onCancel   | 表单取消回调             | false    | Function( )      | -                                 | 无         |
 
+### fields props
+
+| 属性       | 说明                                            | 必填属性 | 类型       | 可选值                                                                                                              | 默认值 |
+| :--------- | :---------------------------------------------- | :------- | :--------- | :------------------------------------------------------------------------------------------------------------------ | :----- |
+| name       | 表单数据 name，与 data 中 key 值一致            | true     | string     | -                                                                                                                   | 无     |
+| type       | 表单项类型                                      | true     | string     | input \| inputNumber \| textarea \| select \| radio \| checkbox \| password \| switch \| rate \| custom（自定义项） | 无     |
+| label      | 表单项 label                                    | true     | string     | -                                                                                                                   | 无     |
+| rules      | 表单项限制规则，与 antd Form 限制规则一致       | false    | object [ ] | -                                                                                                                   | 无     |
+| fieldData  | 适用于 type 为 select/radio 的选择项            | true     | object [ ] | -                                                                                                                   | 无     |
+| placehoder | 适用于 type 为 input/textarea/select 的提示信息 | false    | string     | -                                                                                                                   | 无     |
+| node       | 适用于 type 为 custom 的自定义 ReactNode        | true     | ReactNode  | -                                                                                                                   | 无     |
+
+> **特别说明**：type 类型为 **select/radio**时， **fieldsData** 是必填属性， type 类型为 **custome** 时， **node** 是必填属性。
+
 ### 通用表单特有 API
 
 | 属性             | 说明             | 必填属性 | 类型    | 可选值        | 默认值 |
