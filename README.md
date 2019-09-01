@@ -2,7 +2,9 @@
 
 基于 antd 表单实现的自定义表单，简单实用，支持常用表单及弹窗表单，支持`Input`、`InputNumber`、`Textarea`、`Select`、`Radio`、`Checkbox`、`Password`、`Switch`、`Rate`、`custom（自定义ReactNode）`。
 
-**说明文档：[https://dadaiwei.github.io/uform](https://dadaiwei.github.io/uform)**
+**documentation：[https://dadaiwei.github.io/uform](https://dadaiwei.github.io/uform)**
+<br>
+**npm：[https://www.npmjs.com/package/uform](https://www.npmjs.com/package/uform)**
 
 ## 基本介绍
 
