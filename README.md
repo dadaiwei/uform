@@ -406,3 +406,9 @@ function ModalForm() {
 | visible | 弹框是否可见 | true     | boolean             | true \| false | true   |
 | title   | 弹框标题     | true     | string \| ReactNode | -             | 无     |
 | width   | 弹框宽度     | false    | number              | -             | 600    |
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2019 笪笪的前端小站
