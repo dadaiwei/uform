@@ -24,14 +24,14 @@ class App extends Component {
         title: "属性",
         dataIndex: "attribute",
         key: "atttibute",
-        width: 260,
+        width: 220,
         render: (text) => <div className='api-table-attribute'>{text}</div>
       },
       {
         title: "说明",
         dataIndex: "explain",
         key: "explain",
-        width: 250
+        width: 220
       },
       {
         title: "必填属性",
@@ -200,6 +200,72 @@ class App extends Component {
         defaultValue: "600"
       }
     ];
+    this.fieldsApi = [
+      {
+        key: "1",
+        attribute: "name",
+        explain: "表单数据name，与data中key值一致",
+        required: "true",
+        type: "string",
+        values: "-",
+        defaultValue: "无"
+      },
+      {
+        key: "2",
+        attribute: "type",
+        explain: "表单项类型",
+        required: "true",
+        type: "string",
+        values:
+          "input | inputNumber | textarea | select | radio | checkbox | password | switch | rate | custom（自定义项）",
+        defaultValue: "无"
+      },
+      {
+        key: "3",
+        attribute: "label",
+        explain: "表单项label",
+        required: "true",
+        type: "string",
+        values: "-",
+        defaultValue: "无"
+      },
+      {
+        key: "4",
+        attribute: "rules",
+        explain: "表单项限制规则，与antd Form限制规则一致",
+        required: "false",
+        type: "object [ ]",
+        values: "-",
+        defaultValue: "无"
+      },
+      {
+        key: "5",
+        attribute: "fieldData",
+        explain: "适用于type为select/radio的选择项",
+        required: "true",
+        type: "object [ ]",
+        values: "-",
+        defaultValue: "无"
+      },
+      {
+        key: "6",
+        attribute: "placehoder",
+        explain: "适用于type为input/textarea/select的提示信息",
+        required: "false",
+        type: "string",
+        values: "-",
+        defaultValue: "无"
+      },
+      {
+        key: "7",
+        attribute: "node",
+        explain: "适用于type为custom的自定义ReactNode",
+        required: "true",
+        type: "ReactNode",
+        values: "-",
+        defaultValue: "无"
+      }
+    ];
     this.links = [
       {
         href: "#base-introduction",
@@ -232,12 +298,16 @@ class App extends Component {
             title: "公共API"
           },
           {
+            href: "#fields-api",
+            title: "fields props"
+          },
+          {
             href: "#normal-form-api",
-            title: "通用表单独有API"
+            title: "通用表单特有API"
           },
           {
             href: "#modal-form-api",
-            title: "弹框表单独有API"
+            title: "通用表单特有API"
           }
         ]
       }
@@ -305,11 +375,22 @@ class App extends Component {
           <div className='api-block'>
             <ApiBlock columns={this.apiColumns} data={this.commonApi} />
           </div>
-          <h3 id='normal-form-api'>通用表单独有API</h3>
+          <h3 id='fields-api'>fields props</h3>
+          <div className='api-block'>
+            <ApiBlock columns={this.apiColumns} data={this.fieldsApi} />
+          </div>
+          <div className='api-explain'>
+            <strong>特别说明：</strong>
+            type类型为<span className='bold'> select/radio </span>时，
+            <span className='bold'> fieldsData </span>是必填属性， type类型为
+            <span className='bold'> custome </span>时，<span className='bold'> node </span>
+            是必填属性。
+          </div>
+          <h3 id='normal-form-api'>通用表单特有API</h3>
           <div className='api-block'>
             <ApiBlock columns={this.apiColumns} data={this.normalFormApi} />
           </div>
-          <h3 id='modal-form-api'>弹框表单独有API</h3>
+          <h3 id='modal-form-api'>通用表单特有API</h3>
           <div className='api-block'>
             <ApiBlock columns={this.apiColumns} data={this.modelFormApi} />
           </div>

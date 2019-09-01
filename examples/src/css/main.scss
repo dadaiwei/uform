@@ -149,6 +149,15 @@ h2 {
       margin: 15px 0 10px;
     }
 
+    .api-explain {
+      margin: 20px 0 10px;
+
+      .bold {
+        font-weight: bold;
+        color: #c41d7f;
+      }
+    }
+
     .api-block {
       .ant-table {
         font-size: 16px;
