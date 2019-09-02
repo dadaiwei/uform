@@ -156,7 +156,12 @@ function NormalForm() {
   );
 }
 
-const NormalFormCode = `function NormalForm() {
+const NormalFormCode = `
+import React, { useState } from "react";
+import UForm from "uform";
+import "uform/dist/uform.css";
+
+function NormalForm() {
   const [data, setData] = useState({
     name: "",
     size: 1,
