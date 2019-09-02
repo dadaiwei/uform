@@ -46,6 +46,10 @@ import "uform/dist/uform.css";
 代码
 
 ```
+import React, { useState } from "react";
+import UForm from "uform";
+import "uform/dist/uform.css";
+
 function NormalForm() {
   const [data, setData] = useState({
     name: "",
@@ -210,6 +214,11 @@ function NormalForm() {
 代码
 
 ```
+import React, { useState } from "react";
+import { Button } from "antd";
+import UForm from "uform";
+import "uform/dist/uform.css";
+
 function ModalForm() {
   const { visible, setVisible } = useState(false);
   const [data, setData] = useState({
